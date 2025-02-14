@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Aracely - Tienda Online Ecuador</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Centering the brand title with a light blue background */
+        .pink-header {
+            background-color: #87CEEB; /* Light blue background */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 150px; /* Adjust height as needed */
+        }
+
+        #titulo-marca {
+            font-size: 2.5em; /* Adjust font size for the title */
+            color: white; /* White text color for contrast */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Additional styles for the rest of the page */
+        .container {
+            padding: 20px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-item h4 {
+            margin-top: 10px;
+        }
+
+        .product-item button {
+            margin-top: 10px;
+            background-color: #FF69B4; /* Pink button color */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-item button:hover {
+            background-color: #FF1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            BEAUTY ARACELY
+        </a>
+        <div class="logo-subtitle">Tienda Online Ecuador</div>
+    </div>    
+    <div class="user-actions">
+        <a href="#">Iniciar Sesión</a>
+        <a href="#">Registrarse</a>
+        <!-- Icono del carrito con total -->
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-total">$0.00</span>
+        </div>
+    </div>
+</header>
+
+<!-- Carrito de compras -->
+<div id="cart-container" class="cart-container" style="display: none;">
+    <div class="cart-header">
+        <h2>Carrito de compras</h2>
+        <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+        <p>Total: <span id="total-price">$0.00</span></p>
+    </div>
+</div>
+
+<nav>
+    <a href="#">OFERTAS</a>
+    <a href="#">CUIDADO PERSONAL</a>
+    <a href="#">BELLEZA</a>
+    <a href="#">PERFUMES</a>
+    <a href="#">LABIALES</a>
+    <a href="#">ROSTRO</a>
+</nav>
+
+<!-- Light Blue Header with Brand Name -->
+<header class="pink-header">
+    <h1 id="titulo-marca">SHEGLAM</h1>
+</header>
+
+<!-- Product Grid Section -->
+<section class="container text-center py-5">
+    <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img src="Imagenes web final/Dior.png" alt="DIOR">
+            <h3>DIOR</h3>
+            <p>50.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'DIOR', 50.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img src="Imagenes web final/Dior.png" alt="DIOR">
+            <h3>DIOR</h3>
+            <p>50.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'DIOR', 50.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img src="Imagenes web final/Dior.png" alt="DIOR">
+            <h3>DIOR</h3>
+            <p>50.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'DIOR', 50.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product">
+            <img src="Imagenes web final/Dior.png" alt="DIOR">
+            <h3>DIOR</h3>
+            <p>50.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'DIOR', 50.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product">
+            <img src="Imagenes web final/Dior.png" alt="DIOR">
+            <h3>DIOR</h3>
+            <p>50.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'DIOR', 50.00)">Añadir al Carrito</button>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Additional product items go here -->
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-top">
+        <div class="newsletter">
+            <h3>REGÍSTRATE YA!</h3>
+            <p>Aplica pronto en enterarte de lanzamientos, productos nuevos y más.</p>
+            <input type="email" placeholder="Tu correo electrónico">
+            <button>Enter</button>
+        </div>
+        <div class="contact-info">
+            <h3>Contáctenos</h3>
+            <ul>
+                <li><a href="#">BeautyAracely</a></li>
+                <li><a href="#">0999138909</a></li>
+            </ul>
+        </div>
+        <div class="customer-service">
+            <h3>ATENCIÓN AL CLIENTE</h3>
+            <ul>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Belleza</a></li>
+                <li><a href="#">Catalogos</a></li>
+            </ul>
+        </div>
+        <div class="about-us">
+            <h3>Nosotros</h3>
+            <ul>
+                <li><a href="#">Localiza</a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <div class="footer-bottom">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+  
+        <div class="payment-methods">
+            <img src="Imagenes web final/visa.png" alt="Visa">
+            <img src="Imagenes web final/credit-card.png" alt="Mastercard">
+            <img src="Imagenes web final/paypal.png" alt="PayPal">
+        </div>
+        <p>© 2025 BEAUTY ARACELY. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

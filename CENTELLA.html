@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Aracely - Tienda Online Ecuador</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo del modal de inicio de sesión */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 1000;
+            width: 300px;
+        }
+
+        .login-modal h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .login-modal input[type="text"],
+        .login-modal input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-modal button {
+            width: 100%;
+            padding: 10px;
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-modal button:hover {
+            background-color: #FF1493;
+        }
+
+        .login-modal .close-login {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        /* Fondo oscuro al abrir el modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            BEAUTY ARACELY
+        </a>
+        <div class="logo-subtitle">Tienda Online Ecuador</div>
+    </div>
+    
+    <div class="user-actions">
+        <a href="#" onclick="toggleLogin()">Iniciar Sesión</a>
+        <a href="#">Registrarse</a>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-total">$0.00</span>
+        </div>
+    </div>
+</header>
+
+<!-- Modal de Inicio de Sesión -->
+<div class="modal-overlay" id="modal-overlay" onclick="toggleLogin()"></div>
+<div class="login-modal" id="login-modal">
+    <span class="close-login" onclick="toggleLogin()">✖</span>
+    <h2>Iniciar Sesión</h2>
+    <input type="text" placeholder="Usuario" required>
+    <input type="password" placeholder="Contraseña" required>
+    <button>Ingresar</button>
+</div>
+
+<!-- Carrito de compras -->
+<div id="cart-container" class="cart-container" style="display: none;">
+    <div class="cart-header">
+        <h2>Carrito de compras</h2>
+        <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+        <p>Total: <span id="total-price">$0.00</span></p>
+    </div>
+</div>
+
+<nav>
+    <a href="#" onclick="window.open('ofertas.html', '_blank')">OFERTAS</a>
+    <a href="#" onclick="window.open('Cuidado personal.html', '_blank')">CUIDADO PERSONAL</a>
+    <a href="#" onclick="window.open('Belleza', '_blank')">BELLEZA</a>
+    <a href="#" onclick="window.open('perfumes.html', '_blank')">PERFUMES</a>
+    <a href="#" onclick="window.open('labiales.html', '_blank')">LABIALES</a>
+    <a href="#" onclick="window.open('rostro.html', '_blank')">ROSTRO</a>
+</nav>
+
+<!-- Light Blue Header with Brand Name -->
+<header class="pink-header">
+    <h1 id="titulo-marca">CENTELLA</h1>
+</header>
+
+<!-- Product Grid Section -->
+<section class="container text-center py-5">
+    <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img src="Imagenes web final/descarga (4).jpg" alt="PERFUME">
+            <h3>PERFUME</h3>
+            <p>70.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'PERFUME', 70.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img src="Imagenes web final/descarga (5).jpg" alt="GEL CARACOL">
+            <h3>GEL CARACOL</h3>
+            <p>60.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'GEL CARACOL', 60.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img src="Imagenes web final/descarga (6).jpg" alt="TALCO">
+            <h3>TALCO</h3>
+            <p>20.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'TALCO', 20.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product">
+            <img src="Imagenes web final/images (17).jpg" alt="KIT PERFUMES">
+            <h3>KIT PERFUMES</h3>
+            <p>100.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'KIT PERFUMES', 100.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product">
+            <img src="Imagenes web final/images (18).jpg" alt="CREMA">
+            <h3>DIOR</h3>
+            <p>35.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'CREMA', 35.00)">Añadir al Carrito</button>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product">
+            <img src="Imagenes web final/images (19).jpg" alt="KIT MANOS">
+            <h3>KIT MANOS</h3>
+            <p>90.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'KIT MANOS', 90.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 7 -->
+        <div class="product">
+            <img src="Imagenes web final/images (20).jpg" alt="KIT ROSTRO">
+            <h3>KIT ROSTRO</h3>
+            <p>125.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'KIT ROSTRO', 125.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="product">
+            <img src="Imagenes web final/images (21).jpg" alt="SERUM">
+            <h3>SERUM</h3>
+            <p>25.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'SERUM', 25.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 9 -->
+        <div class="product">
+            <img src="Imagenes web final/images (22).jpg" alt="lOCIÓN">
+            <h3>lOCIÓN</h3>
+            <p>50.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'lOCIÓN', 50.00)">Añadir al Carrito</button>
+        </div>
+
+        <!-- Producto 10 -->
+        <div class="product">
+            <img src="Imagenes web final/images (23).jpg" alt="kit baño">
+            <h3>kit baño</h3>
+            <p>55.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <label class="quantity">0</label>
+                <button onclick="increaseQuantity(this)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart(this, 'kit baño', 55.00)">Añadir al Carrito</button>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Additional product items go here -->
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-top">
+        <div class="newsletter">
+            <h3>REGÍSTRATE YA!</h3>
+            <p>Aplica pronto en enterarte de lanzamientos, productos nuevos y más.</p>
+            <input type="email" placeholder="Tu correo electrónico">
+            <button>Enter</button>
+        </div>
+        <div class="contact-info">
+            <h3>Contáctenos</h3>
+            <ul>
+                <li><a href="#">BeautyAracely</a></li>
+                <li><a href="#">0999138909</a></li>
+            </ul>
+        </div>
+        <div class="customer-service">
+            <h3>ATENCIÓN AL CLIENTE</h3>
+            <ul>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Belleza</a></li>
+                <li><a href="#">Catalogos</a></li>
+            </ul>
+        </div>
+        <div class="about-us">
+            <h3>Nosotros</h3>
+            <ul>
+                <li><a href="#">Localiza</a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <div class="footer-bottom">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+  
+        <div class="payment-methods">
+            <img src="Imagenes web final/visa.png" alt="Visa">
+            <img src="Imagenes web final/credit-card.png" alt="Mastercard">
+            <img src="Imagenes web final/paypal.png" alt="PayPal">
+        </div>
+        <p>© 2025 BEAUTY ARACELY. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
