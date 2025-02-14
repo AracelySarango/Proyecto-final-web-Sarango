@@ -269,3 +269,22 @@ body {
     right: 10px;
   }
   
+  /* Centrar el título "Catálogos" */
+  .catalog-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  /* Ajuste para las imágenes */
+  .catalog-item img {
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .catalog-item img:hover {
+    transform: scale(1.05);
+  }
+
+
+  
