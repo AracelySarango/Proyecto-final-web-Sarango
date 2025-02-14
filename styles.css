@@ -1,0 +1,271 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #87CEEB;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  header .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+  }
+  
+  header .search-bar input {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  header .user-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .user-actions a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  header .cart {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .cart .price {
+    margin-left: 10px;
+    color: white;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Carrusel Principal */
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .carousel-control.prev {
+    left: 10px;
+  }
+  
+  .carousel-control.next {
+    right: 10px;
+  }
+  
+  /* Sección Trendy y Carrusel Interno */
+  .trendy {
+    background-color: #87CEEB;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .trendy-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .trendy-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .trendy-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Estilos para cada producto */
+  .product {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .product .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  
+  .add-to-cart {
+    background-color: #87CEEB;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer .social-media a,
+  footer .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  footer .links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative; /* Añadir esto */
+  }
+
+/* CSS for the Marcas Section */
+#marcas {
+    text-align: center; /* Center the content horizontally */
+    padding: 20px;
+  }
+  
+  .brands {
+    display: flex; /* Use flexbox to arrange buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line on smaller screens */
+    gap: 10px; /* Add some space between the buttons */
+  }
+  
+  .brand-button {
+    background-color: #ADD8E6; /* Light Blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+  }
+  
+  .brand-button:hover {
+    background-color: #87CEEB; /* Slightly darker blue on hover */
+  }
+  
+  /* Estilo para el Carrusel Trendy */
+.trendy-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .trendy-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .trendy-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .trendy-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; 
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .carousel-control.prev {
+    left: 10px;
+  }
+  
+  .carousel-control.next {
+    right: 10px;
+  }
+  

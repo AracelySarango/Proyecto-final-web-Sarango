@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Aracely - Tienda Online Ecuador</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic styling for the catalog section */
+    .catalog {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      padding: 20px;
+    }
+
+    .catalog-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 80%; /* Adjust width as needed */
+      text-align: center;
+    }
+
+    .catalog-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* Media query for larger screens to display items in a row */
+    @media (min-width: 768px) {
+      .catalog {
+        flex-direction: row; /* Display items in a row */
+        justify-content: space-around; /* Space items evenly */
+      }
+
+      .catalog-item {
+        width: 30%; /* Adjust width for row display */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Tienda Online Ecuador</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar productos...">
+    </div>
+    <div class="user-actions">
+      <a href="#">Iniciar Sesión</a>
+      <a href="#">Registrarse</a>
+      <div class="cart">
+        <span>🛒</span>
+        <span class="price">$0.00</span>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <a href="#">OFERTAS</a>
+    <a href="#">CUIDADO PERSONAL</a>
+    <a href="#">BELLEZA</a>
+    <a href="#">PERFUMES</a>
+    <a href="#">LABIALES</a>
+    <a href="#">ROSTRO</a>
+  </nav>
+  
+  <!-- Carrusel Principal -->
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="C:\Proyecto final web Sarango\Imagenes web final\tocobo.png" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="C:\Proyecto final web Sarango\Imagenes web final\productos.png" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="C:\Proyecto final web Sarango\Imagenes web final\skin.png.webp" alt="Imagen 3">
+      </div>
+    </div>
+    <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+  </div>
+  
+  <!-- Sección Trendy con Carrusel -->
+  <div class="trendy">
+    <h2>Trendy</h2>
+    <div class="trendy-carousel">
+      <div class="trendy-carousel-inner">
+        <!-- Primer Slide: Productos 1 a 3 -->
+        <div class="trendy-slide active">
+          <div class="product">
+            <img src="Imagenes web final/productos.png" alt="Producto 1">
+            <h3>Nombre del Producto 1</h3>
+            <p>$10.00</p>
+            <div class="controls">
+              <button>-</button>
+              <label>1</label>
+              <button>+</button>
+            </div>
+            <button class="add-to-cart">Añadir al Carrito</button>
+          </div>
+          <div class="product">
+            <img src="Imagenes web final/loreal.png" alt="Producto 2">
+            <h3>Nombre del Producto 2</h3>
+            <p>$10.00</p>
+            <div class="controls">
+              <button>-</button>
+              <label>1</label>
+              <button>+</button>
+            </div>
+            <button class="add-to-cart">Añadir al Carrito</button>
+          </div>
+          <div class="product">
+            <img src="Imagenes web final/belleza.png" alt="Producto 3">
+            <h3>Nombre del Producto 3</h3>
+            <p>$10.00</p>
+            <div class="controls">
+              <button>-</button>
+              <label>1</label>
+              <button>+</button>
+            </div>
+            <button class="add-to-cart">Añadir al Carrito</button>
+          </div>
+        </div>
+        <!-- Segundo Slide: Productos 4 a 6 -->
+        <div class="trendy-slide">
+          <div class="product">
+            <img src="C:\Proyecto final web Sarango\Imagenes web final\Dior.png" alt="Producto 4">
+            <h3>Nombre del Producto 4</h3>
+            <p>$10.00</p>
+            <div class="controls">
+              <button>-</button>
+              <label>1</label>
+              <button>+</button>
+            </div>
+            <button class="add-to-cart">Añadir al Carrito</button>
+          </div>
+          <div class="product">
+            <img src="C:\Proyecto final web Sarango\Imagenes web final\tocobo.png" alt="Producto 5">
+            <h3>Nombre del Producto 5</h3>
+            <p>$10.00</p>
+            <div class="controls">
+              <button>-</button>
+              <label>1</label>
+              <button>+</button>
+            </div>
+            <button class="add-to-cart">Añadir al Carrito</button>
+          </div>
+          <div class="product">
+            <img src="C:\Proyecto final web Sarango\Imagenes web final\loreal.png" alt="Producto 6">
+            <h3>Nombre del Producto 6</h3>
+            <p>$10.00</p>
+            <div class="controls">
+              <button>-</button>
+              <label>1</label>
+              <button>+</button>
+            </div>
+            <button class="add-to-cart">Añadir al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control prev">&#10094;</button>
+    <button class="carousel-control next">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Catálogos Section -->
+  <section id="catalogos">
+    <h2>Catálogos</h2>
+    <div class="catalog">
+      <!-- Catálogo 1 -->
+      <div class="catalog-item">
+        <img src="C:\Proyecto final web Sarango\Imagenes web final\labiales.png" alt="Catálogo 1">
+        <h3>Nombre Catálogo 1</h3>
+      </div>
+
+      <!-- Catálogo 2 -->
+      <div class="catalog-item">
+        <img src="C:\Proyecto final web Sarango\Imagenes web final\centella.png" alt="Catálogo 2">
+        <h3>Nombre Catálogo 2</h3>
+      </div>
+
+      <!-- Catálogo 3 -->
+      <div class="catalog-item">
+        <img src="C:\Proyecto final web Sarango\Imagenes web final\mixsoon.png" alt="Catálogo 3">
+        <h3>Nombre Catálogo 3</h3>
+      </div>
+    </div>
+  </section>
+<!-- Marcas Section -->
+<section id="marcas">
+    <h2>Marcas</h2>
+    <div class="brands">
+      <!-- Brand Buttons -->
+      <button class="brand-button">TOCOBO</button>
+      <button class="brand-button">SHENGLAM</button>
+      <button class="brand-button">LOREAL</button>
+      <button class="brand-button">CENTELLA</button>
+      <button class="brand-button">DIOR</button>
+    </div>
+  </section>
+  <footer>
+    <div class="social-media">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Whatsapp</a>
+    </div>
+    <div class="links">
+      <a href="#">Apoyo al Cliente</a>
+      <a href="#">Preguntas Frecuentes</a>
+      <a href="#">Términos y Condiciones</a>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Acerca de</a>
+      <a href="#">Nuestras Tiendas</a>
+    </div>
+    <p>© 2025 ZARIMPORT. Todos los derechos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
